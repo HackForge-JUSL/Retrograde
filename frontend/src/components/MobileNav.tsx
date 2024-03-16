@@ -12,21 +12,24 @@ const MobileNav = () => {
         <SheetTrigger>
           <Menu className="text-purple-500" />
         </SheetTrigger>
-        <SheetContent className="space-y-3">
+        <SheetContent className="bg-white space-y-3">
           <SheetTitle>
             {isAuthenticated ? (
-              <span className="flex items-center font-bold gap-2">
+              <span className=" flex items-center font-bold gap-2">
                 <CircleUserRound className="text-purple-500" />
                 {user?.email}
               </span>
             ) : (
-              <span> Welcome to DVote.com!</span>
+              <span className="flex justify-center"> Welcome to DVote.com!</span>
             )}
           </SheetTitle>
           <Separator />
           <SheetDescription className="flex flex-col gap-4">
             {isAuthenticated ? (
-              <span>Home Page</span>
+              <span className="flex items-center font-bold gap-2">
+              <CircleUserRound className="text-purple-500" />
+              {user?.email}
+            </span>
             ) : (
               <Button
                 onClick={() => loginWithRedirect()}
