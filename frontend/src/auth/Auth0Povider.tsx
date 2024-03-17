@@ -10,9 +10,9 @@ function Auth0Povider({ children }: Props) {
   const clientId = import.meta.env.VITE_AUTH0_CLIENT_ID;
   const redirectUri = import.meta.env.VITE_AUTH0_REDI;
 
-  // if (!domain || !clientId || !redirectUri) {
-  //   throw new Error("Auth0 domain, client id, and redirect uri are required");
-  // }
+  if (!domain || !clientId || !redirectUri) {
+    throw new Error("Auth0 domain, client id, and redirect uri are required");
+  }
 
   const onRedirectCallback = (appState?: AppState, user?: User) => {
     console.log(user);
